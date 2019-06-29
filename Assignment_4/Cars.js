@@ -2,7 +2,7 @@
     firstName:"bob",
     lastName:"smith",
     carsWishList:[{color:"red",speed:"200kmph",Model:"a",FuelType:"petrol"},
-    {color:"black",speed:"250kmph",Model:"b",FuelType:"petrol"},
+    {color:"black",speed:"250kmph",Model:"h",FuelType:"petrol"},
     {color:"white",peed:"180kmph",Model:"c",FuelType:"desiel"}],
     carsOwned:[{color:"silver",speed:"200kmph",Model:"d",FuelType:"petrol"},
     {color:"maroon",speed:"250kmph",Model:"e",FuelType:"petrol"},
@@ -15,8 +15,12 @@
     },
     addToWish:function(newShowRoom,model){
       var val = check(newShowRoom.cars,model)
-      this.carsWishList.push(newShowRoom.cars[val]);
-      newShowRoom.cars.splice(val,1)
+      if(check(this.carsWishList,model)==-1){
+          this.carsWishList.push(newShowRoom.cars[val]);
+          newShowRoom.cars.splice(val,1)
+      }else{
+        console.log("Car is already existed in your wishist!!")
+      }
     }
   }
 function check(arr,model){
@@ -37,8 +41,8 @@ var showRoom = {
     Address:"dfvsdv"
   }
   
-person.addToOwned(showRoom,'h')
-person.addToWish(showRoom,'g')
+person.addToOwned(showRoom,'g')
+person.addToWish(showRoom,'h')
 console.log(person.carsOwned)
 console.log(person.carsWishList)
 console.log(showRoom)
