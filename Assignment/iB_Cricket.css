@@ -1,0 +1,185 @@
+.page-start{
+      width: 100%;
+      height: 56px;
+      background-color: #1b4a98;
+      display :flex;
+      flex-direction:row;
+      align-items: center; 
+      justify-content: center;
+      
+
+}
+.page-end{
+  background-color:#1b4486;
+  width: 100%;
+  height: 56px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+      
+}
+.iB-Cricket-now-as-a {
+  
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #ffffff;
+  
+  }
+.close-image{
+    height: 12px;
+    width:12px;
+    position: absolute;
+    right:22px;
+    top:25px;
+}
+.main-page{
+  display: flex;
+  flex-direction:column;
+  align-items: center; 
+  justify-content: center;
+
+}
+.menu-bar{
+  display :flex;
+  flex-direction:row;
+  align-items: flex-start; 
+  justify-content: space-around;
+
+}
+.box{
+  align-content: center;
+}
+.logo-image{
+  width:194px;
+  height:150px;
+
+  
+}
+.desc-lines{
+  color:white;
+  font-size:32px;
+  font-style:italic;
+  text-align:center;
+  font-weight: bold;
+}
+.bottom-part{
+  background-color: #1b4a98;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.bottom-part-mobile{
+  background-color: #1b4a98;
+}
+.stadium{
+  display:flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+.stadium-mob{
+  
+  display:flex;
+  flex-direction: row;
+  
+}
+.sub-stadium-mob{
+  margin-top: 60px;
+  margin-left:18px;
+  display:flex;
+  flex-direction:column;
+  align-items: flex-start; 
+  justify-content: flex-start;
+}
+.small-line-mob{
+  font-size: 14px;
+  color:white;
+  font-style: italic;
+}
+.bottom-line-mob{
+  font-size:17px;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  font-style:italic;
+}
+
+.end-lines{
+  color:white;
+  font-style: italic;
+  font-size:16px;
+}
+
+.small-lines{
+  color:white;
+  text-align: center;
+  font-style:italic;
+}
+
+.bottom-lines{
+  color:white;
+  text-align: center;
+  font-style:italic;
+  font-size:18;
+  font-weight: bold;
+  margin-bottom:110px;
+}
+
+@media screen and (max-width:767px){
+  .page-start{
+
+    display:none;
+    justify-content:space-around
+  }
+  .main-page{
+    background-image: url("assets/mobile/bg-mobile.png");
+    height:100vh;
+    background-repeat: no-repeat;
+    background-size:cover; 
+  }
+  .desc-lines{
+    font-size:24px;
+  }
+  .end-lines{
+    font-size:14px;
+  }
+  .bottom-part{
+    display:none;
+  }
+
+}
+
+@media screen and (min-width:768px) and (max-width:1024px){
+      .page-start{
+        display:none;
+      }
+      .main-page{
+        background-image: url("assets/tablet/bg-tablet.png");
+        height:100vh;
+        background-repeat: no-repeat;
+        background-size:cover;
+      }
+      .bottom-part-mobile{
+        display:none;
+      }
+
+}
+@media screen and (min-width:1024px){
+
+  .main-page{
+    background-image: url("assets/desktop/bg-desktop.png");
+    height:100vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  .bottom-part-mobile{
+    display:none;
+  }
+}
