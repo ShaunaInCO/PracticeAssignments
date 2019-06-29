@@ -30,7 +30,7 @@
   }
 function checkOwn(arr,model){
   let i;
- 
+    console.log(arr)
     for(i=0;i<arr.length;i++){
 
       if(arr[i].Model == model){
@@ -55,11 +55,18 @@ var showRoom = {
     cars:[{color:"red",speed:"200kmph",Model:"g",FuelType:"petrol"},
          {color:"black",speed:"250kmph",Model:"h",FuelType:"petrol"},
           {color:"white",speed:"180kmph",Model:"i",FuelType:"desiel"}],
-    Address:"dfvsdv"
+    Address:"dfvsdv",
+    addCar:function(model){
+                if(checkWish(this.cars,model)==-1){
+                  this.cars.push(model)
+              }else{
+                console.log("Car is already existed in Show Room!")
+              }
+            }
   }
-var info = {color:"red",speed:"200kmph",Model:"a",FuelType:"petrol"}
-person.addToOwned(showRoom,'z')
+var info = {color:"red",speed:"200kmph",Model:"r8",FuelType:"petrol"}
+person.addToOwned(showRoom,'r8')
 //person.addToWish(info)
-//cconsole.log(person.carsOwned)
+//onsole.log(person.carsOwned)
 //console.log(person.carsWishList)
 //console.log(showRoom)
