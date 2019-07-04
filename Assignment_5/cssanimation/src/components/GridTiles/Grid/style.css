@@ -1,0 +1,30 @@
+
+.grid{
+
+    background-color: cadetblue;
+    border:solid;
+    border-color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    width:100px;
+    height:100px;
+
+}
+.grid-2d{
+    transform: rotate(180deg);
+    transition:4s;
+}
+.anti-grid-2d{
+    transform: rotate(-0deg);
+    transition:4s;
+}
+
+.grid-3d{
+    transform: rotateY(180deg);
+    transition:4s;
+}
+.anti-grid-3d{
+    transform: rotateY(0deg);
+    transition:4s;
+}

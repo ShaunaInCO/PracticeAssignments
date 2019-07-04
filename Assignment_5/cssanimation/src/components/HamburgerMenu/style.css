@@ -1,0 +1,27 @@
+.showDown{
+    height:25px;;
+    width:25px;
+}
+.division1{
+    height:0px;
+    transition: 0.5s;
+    background-color:rgb(84, 84, 233);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.spam{
+
+    font-size: 30px;
+    color:white;
+}
+.division{
+    height:200px;
+    background-color:rgb(84, 84, 233);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition:0.5s;
+    
+}

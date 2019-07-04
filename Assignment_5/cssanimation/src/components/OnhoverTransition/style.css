@@ -1,0 +1,19 @@
+.button {
+    width: 200px;
+    height: 70px;
+    background: orange;
+    border:none;
+    color: white;
+    font-size: 25px;
+    transition:1s;
+  }
+ 
+  .button:hover {
+  
+    border-radius:30px;
+    
+    width: 150px;
+   
+    background-color:green;
+    
+  }
