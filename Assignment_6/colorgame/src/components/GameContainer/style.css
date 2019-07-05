@@ -1,0 +1,9 @@
+
+.parent{
+    height:600px;
+    width: 600px;
+    
+ }
+.row{
+    display:flex;
+}
