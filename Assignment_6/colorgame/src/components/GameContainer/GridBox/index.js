@@ -5,24 +5,24 @@ class GridBox extends Component{
 
     constructor (props){
         super (props);
-        this.val=this.props.level
-       // console.log(this.val)
-        this.divStyle={
-            height:600/this.val,
-            width:600/this.val,
-            backgroundColor:"darkviolet",
-            border:"solid",
-            borderColor: "white"
-        }
         this.state={
-            level:0
+          boxStyle:""
+        }
+    }
+    handleClick=(e)=>{
+        if(this.props.array.indexOf(e.target.value)!=-1){
+
+        }else{
+            this.setState({
+                boxStyle:"clickedBox"
+            })
         }
     }
     render(){
 
         return(
             
-           <div style={this.divStyle} value={this.props.value}>{this.props.value} 
+           <div className={this.state.boxStyle+" "+this.props.cssStyle}value={this.props.value} onClick={this.handleClick}> 
            </div>
         )
     }
