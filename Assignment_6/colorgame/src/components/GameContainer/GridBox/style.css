@@ -5,14 +5,27 @@
     width: 60px;
    
 }
+.boxReset{
+    background-color:white;
+    transform: rotateY(180deg);
+    transition:5s;
+}
 .boxOn{
-    background-color: rgb(128,112,250,0.25);
-    border-color: white;
+    background-color: rgb(128,112,250,0.25) !important;
+   
 }
 .clickedBox{
     transform: rotateY(180deg);
     transition:0.2s;
     background-color:rgb(93, 151, 153);
+    margin:1px;
+    height:60px;
+    width: 60px;
+}
+.unClickedBox{
+    transform: rotateY(180deg);
+    transition:0.2s;
+    background-color:crimson;
     margin:1px;
     height:60px;
     width: 60px;

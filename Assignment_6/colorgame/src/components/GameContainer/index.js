@@ -11,6 +11,7 @@ class GameContainer extends Component{
         this.randomSize=3;
         this.on=0;
         this.randomArray=[]
+        this.arrayFromChild=[]
         this.createRandomArray(3)
         this.state={
             level:0,
@@ -22,54 +23,76 @@ class GameContainer extends Component{
         }
 
     }
-    //UI Code------!!!!!
-    createGrids(val,arr){
+    //Creating grids dynamically------!!
+    createGrids(val){
         
         for(let i=1;i<=val;i++){
-            this.element.push(<div  className="row">{this.createRow(this.count,val*i,arr)}</div>)
+            this.element.push(<div  className="row">{this.createRow(this.count,val*i)}</div>)
             this.count=this.count+val;    
         }
         return this.element;
     }
-    createRow(start,end,arr){
+    createRow(start,end){
               
         this.row=[];
         for(let i=start;i<end;i++){
-            if(arr.indexOf(i+1)!=-1)
-                 this.row.push(<GridBox value={i} cssStyle="clickedBox" array={arr}/>)
+            if(this.state.indexArray.indexOf(i+1)!=-1)
+                 this.row.push(<GridBox value={i} key={this.state.level+"-"+i} cssStyle="clickedBox" array={this.state.indexArray} handlerFromParentSuccess={this.successEvent}/>)
             else{
-                this.row.push(<GridBox value={i} cssStyle="box" array={arr}/>)
+                this.row.push(<GridBox value={i} key={this.state.level+"-"+i} cssStyle="box" array={this.state.indexArray} handlerFromParentFail={this.failedEvent}/>)
                 }
-              console.log(this.state.indexArray.length)
+            
         } 
          
         return this.row;
     }
-    handleClick=(e)=>{
-        this.randomSize++;
-        this.createRandomArray(this.randomSize)
-   
-        this.setState({
-            level:this.state.level+1,
-            parentCss:"parentUp",
-            indexArray:this.randomArray,
-        })
-        setTimeout(this.clearArray,5000)
+
+    //------*-------
+    //-----handling events from child-----
+    successEvent=(val)=>{
+            if(this.arrayFromChild.indexOf(val)==-1){
+                this.arrayFromChild.push(val)
+            }
+
+            if(this.arrayFromChild.length==this.randomArray.length){
+                this.randomSize++;
+                this.createRandomArray(this.randomSize)
+                this.count=0;
+                this.element=[];
+                this.arrayFromChild=[]
+                setTimeout(
+                ()=>{this.setState({
+                    level:this.state.level+1,
+                    parentCss:"parentUp",
+                    indexArray:this.randomArray
+                })},500)            
+        }
+            
+        if(this.randomArray.length==7){
+                window.alert("YOU HAVE SUCCESSFULLY COMPLETED THE GAME")
+                this.resetArray()
+        }        
+    }
+    resetArray=()=>{
+
+        this.randomSize=3
+        this.createRandomArray(this.randomSize);
         this.count=0;
         this.element=[];
-        
-     
-    }
-    resetClick=()=>{
-        this.createRandomArray(3);
+        this.arrayFromChild=[]
         this.setState({
             level:0,
             indexArray:this.randomArray
         })
-        this.count=0;
-        this.element=[];
-        
     }
+    failedEvent=()=>{
+       
+        setTimeout(this.resetArray,500) 
+           
+    }
+
+    //------*---------
+    //----handling toggle button actions-----
     changeStyle=()=>{
         
         if(this.on%2==0){
@@ -84,17 +107,13 @@ class GameContainer extends Component{
                 fullViewOn:" ",
                 labelContent:" ",
                 boxStyle:""
-
             })
         }
         this.on++;
-       // console.log(e.target.value)
     }
 
-//////------end----
-// functionality--
-
-    
+    //////------*-----
+    //----creating unique random array----    
     createRandomArray=(val)=>{
         var num=val;
         var max=val*val;
@@ -106,14 +125,9 @@ class GameContainer extends Component{
                 num=num-1;
             }            
         }
-      //console.log(this.randomArray)
     }
-    clearArray=()=>{
-        this.setState({
-            indexArray:[]
-        })
-        //console.log(this.state.indexArray)
-    }
+    ///------*-----
+
     
     render(){
         return(
@@ -130,13 +144,10 @@ class GameContainer extends Component{
                                     </label>
                             </div>
                             </div>
-                                <div className={"parent "+this.state.parentCss}>
+                                <div className={"parent "+this.state.parentCss} key={this.state.level}>
                                  
-                                     {this.createGrids(this.state.level+3,this.state.indexArray)}
+                                     {this.createGrids(this.state.level+3)}
                                 </div> 
-                            <button onClick={this.handleClick} >right</button>
-                            <button onClick={this.resetClick}>wrong</button>
-                            <button onClick={this.clearArray} >reset</button>
                         </div>
                 </div>
             </div>
