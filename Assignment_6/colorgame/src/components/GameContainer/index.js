@@ -143,7 +143,7 @@ class GameContainer extends Component {
         <div className="container">
           <div>
             <div className={this.state.labelContent + " top-container"}>
-              <span>Level:{this.state.level}</span>
+              <span>Level:{this.state.level}</span>{" "}
               <div>
                 <span className={this.state.labelContent}>Theme Mode:</span>
                 <label className="switch">

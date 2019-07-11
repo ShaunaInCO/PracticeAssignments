@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import HoverTransition from "./components/HoverTransition"
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import HoverTransition from "./components/HoverTransition";
 function App() {
   return (
     <div>
