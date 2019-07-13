@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { runInThisContext } from "vm";
-
+import "./style.css";
 export default class InputTodoBox extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,9 @@ export default class InputTodoBox extends Component {
   };
   handleSubmit = e => {
     if (e.key === "Enter") {
-      this.props.handlerFromInputTodo(this.state.value);
+      if (this.state.value !== "") {
+        this.props.handlerFromInputTodo(this.state.value);
+      }
       this.setState({
         value: ""
       });
@@ -30,6 +32,7 @@ export default class InputTodoBox extends Component {
           onKeyDown={this.handleSubmit}
           placeholder="What needs to be done?"
           value={this.state.value}
+          class="inputBox"
         />
       </>
     );

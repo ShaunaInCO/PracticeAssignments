@@ -1,0 +1,19 @@
+.textBox {
+  width: 640px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.textBox:hover {
+}
+.closeTodo {
+  height: 30px;
+  width: 30px;
+}
+.strikeOfText {
+  text-decoration: line-through;
+}
+.editTextBox {
+  width: 580px;
+  height: 48px;
+}
