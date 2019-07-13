@@ -7,7 +7,7 @@ export default class TodoRow extends Component {
     return (
       <div className="todoRow">
         <TodoCompleteStatus
-          todoId={this.props.todoObject.id}
+          todoObject={this.props.todoObject}
           handleTodoCompleteStatus={this.props.handleTodoCompleteStatus}
         />
         <TodoTextBody

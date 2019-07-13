@@ -51,6 +51,12 @@ export default class TodoMainContainer extends Component {
     });
     //console.log(editedText + " " + id);
   };
+  clearCompletedTodos = () => {
+    var todoListArray = this.state.todoList;
+    this.setState({
+      todoList: todoListArray.filter(obj => obj.isCompleted !== true)
+    });
+  };
   render() {
     return (
       <div>
@@ -63,6 +69,7 @@ export default class TodoMainContainer extends Component {
           handleTodoCompleteStatus={this.handleStatus}
           handleRemoveTodo={this.removeTodo}
           handlerToEditTodo={this.editTodo}
+          handleClearCompletedTodos={this.clearCompletedTodos}
         />
       </div>
     );

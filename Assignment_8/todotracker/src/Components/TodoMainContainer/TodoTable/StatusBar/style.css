@@ -1,0 +1,9 @@
+.statusBar {
+  margin-left: 5px;
+  width: 700px;
+  height: 60px;
+  border: solid 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
