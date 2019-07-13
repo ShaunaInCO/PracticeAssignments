@@ -5,25 +5,36 @@ export default class TodoTextBody extends Component {
     super(props);
     this.state = {
       editable: false,
-      editText: this.props.todoText
+      editText: this.props.todoObject.text
     };
   }
   handleClick = () => {
-    this.props.handleRemoveTodo(this.props.todoId);
+    this.props.handleRemoveTodo(this.props.todoObject.id);
   };
   changeEditable = () => {
-    this.setState({
-      editable: !this.state.editable
-    });
+    if (this.props.todoObject.isCompleted === false) {
+      this.setState({
+        editable: !this.state.editable
+      });
+    }
+    console.log(this.props.todoObject.isCompleted);
   };
   handleEditChange = e => {
     this.setState({
       editText: e.target.value
     });
   };
-  handleSubmit = () => {
+  handleSubmit = e => {
     if (e.key === "Enter") {
-      this.props.handlerToEditTodo(this.state.editText, this.props.todoId);
+      if (this.state.editText !== "") {
+        this.props.handlerToEditTodo(
+          this.state.editText,
+          this.props.todoObject.id
+        );
+      }
+      this.setState({
+        editable: !this.state.editable
+      });
     }
   };
   render() {
@@ -34,7 +45,9 @@ export default class TodoTextBody extends Component {
           onClick={this.editTodo}
         >
           {!this.state.editable ? (
-            <span onClick={this.changeEditable}>{this.props.todoText}</span>
+            <span onClick={this.changeEditable}>
+              {this.props.todoObject.text}
+            </span>
           ) : (
             <input
               type="text"

@@ -11,10 +11,10 @@ export default class TodoRow extends Component {
           handleTodoCompleteStatus={this.props.handleTodoCompleteStatus}
         />
         <TodoTextBody
-          todoText={this.props.todoObject.text}
-          todoId={this.props.todoObject.id}
+          todoObject={this.props.todoObject}
           statusCompleted={this.props.todoObject.isCompleted}
           handleRemoveTodo={this.props.handleRemoveTodo}
+          handlerToEditTodo={this.props.handlerToEditTodo}
         />
       </div>
     );

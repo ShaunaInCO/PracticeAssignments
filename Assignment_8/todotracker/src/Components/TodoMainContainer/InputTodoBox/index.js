@@ -32,7 +32,7 @@ export default class InputTodoBox extends Component {
           onKeyDown={this.handleSubmit}
           placeholder="What needs to be done?"
           value={this.state.value}
-          class="inputBox"
+          className="inputBox"
         />
       </>
     );

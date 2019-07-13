@@ -9,16 +9,13 @@ export default class TodoMainContainer extends Component {
     };
   }
   handleTodoText = val => {
-    this.setState(
-      {
-        todoList: this.state.todoList.concat({
-          id: this.state.todoList.length,
-          text: val,
-          isCompleted: false
-        })
-      },
-      () => {}
-    );
+    this.setState({
+      todoList: this.state.todoList.concat({
+        id: this.state.todoList.length,
+        text: val,
+        isCompleted: false
+      })
+    });
   };
   handleStatus = val => {
     var todoListArray = this.state.todoList;
@@ -37,11 +34,23 @@ export default class TodoMainContainer extends Component {
       var todoListArray = this.state.todoList;
       var idNo = val;
       this.setState({
-        todoList: todoListArray.filter(obj => obj.id != idNo)
+        todoList: todoListArray.filter(obj => obj.id !== idNo)
       });
     }
   };
-  editTodo(val, id) {}
+  editTodo = (editedText, id) => {
+    var todoListArray = this.state.todoList;
+
+    for (let i = 0; i < todoListArray.length; i++) {
+      if (id === todoListArray[i].id) {
+        todoListArray[i].text = editedText;
+      }
+    }
+    this.setState({
+      todoList: todoListArray
+    });
+    //console.log(editedText + " " + id);
+  };
   render() {
     return (
       <div>
@@ -53,7 +62,7 @@ export default class TodoMainContainer extends Component {
           todoList={this.state.todoList}
           handleTodoCompleteStatus={this.handleStatus}
           handleRemoveTodo={this.removeTodo}
-          handlerToEditTodo
+          handlerToEditTodo={this.editTodo}
         />
       </div>
     );
