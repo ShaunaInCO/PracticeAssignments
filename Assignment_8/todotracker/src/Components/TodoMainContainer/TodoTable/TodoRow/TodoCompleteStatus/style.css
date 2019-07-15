@@ -14,6 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .checkedRound {
   height: 40px;
@@ -23,6 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .checkedImage {
   height: 35px;

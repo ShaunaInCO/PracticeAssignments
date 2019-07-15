@@ -17,7 +17,7 @@ export default class TodoTextBody extends Component {
         editable: !this.state.editable
       });
     }
-    console.log(this.props.todoObject.isCompleted);
+    // console.log(this.props.todoObject.isCompleted);
   };
   handleEditChange = e => {
     this.setState({
@@ -26,16 +26,23 @@ export default class TodoTextBody extends Component {
   };
   handleSubmit = e => {
     if (e.key === "Enter") {
-      if (this.state.editText !== "") {
+      if (this.state.editText.trim() !== "") {
         this.props.handlerToEditTodo(
           this.state.editText,
           this.props.todoObject.id
         );
+      } else {
+        this.setState({
+          editText: this.props.todoObject.text
+        });
       }
       this.setState({
         editable: !this.state.editable
       });
     }
+  };
+  mouseClick = e => {
+    // console.log(e.target.value);
   };
   render() {
     return (
@@ -55,6 +62,7 @@ export default class TodoTextBody extends Component {
               onKeyDown={this.handleSubmit}
               value={this.state.editText}
               className="editTextBox"
+              onFocus={this.mouseClick}
             />
           )}
         </div>

@@ -47,7 +47,7 @@ export default class StatusBar extends Component {
         <div className="clearComplete">
           {this.props.clearCompleteStatus ? (
             <span onClick={this.props.handleClearCompletedTodos}>
-              Clear Completed
+              Clear completed
             </span>
           ) : (
             <div />

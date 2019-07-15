@@ -1,7 +1,7 @@
 .todoRow {
   width: 783px;
   height: 80px;
-  border: solid 1px;
+  border: none;
   border-top: 0;
   border-color: rgb(71, 69, 69, 0.5);
   display: flex;

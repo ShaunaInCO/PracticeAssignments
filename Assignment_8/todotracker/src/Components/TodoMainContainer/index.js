@@ -67,6 +67,7 @@ export default class TodoMainContainer extends Component {
           <InputTodoBox
             handlerFromInputTodo={this.handleTodoText}
             value={this.state.value}
+            length={this.state.todoList.length}
           />
           <TodoTable
             todoList={this.state.todoList}

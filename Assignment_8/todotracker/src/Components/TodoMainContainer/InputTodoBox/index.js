@@ -27,7 +27,11 @@ export default class InputTodoBox extends Component {
     return (
       <div className="inputField">
         <div className="imageContainer">
-          <img src="/assets/dropDown.png" className="arrow" />
+          {this.props.length !== 0 ? (
+            <img src="/assets/dropDown.png" className="arrow" />
+          ) : (
+            ""
+          )}
         </div>
         <input
           type="text"
