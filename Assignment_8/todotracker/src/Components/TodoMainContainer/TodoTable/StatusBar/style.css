@@ -1,9 +1,43 @@
 .statusBar {
-  margin-left: 5px;
-  width: 700px;
+  width: 785px;
   height: 60px;
   border: solid 1px;
+  border-top: 0;
+  border-color: rgb(71, 69, 69, 0.5);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: white;
+  box-shadow: 10px 10px 10px 10px rgba(218, 218, 218, 0.5);
+}
+.itemsLeft {
+  margin-left: 20px;
+  font-size: 14px;
+  color: #777777;
+}
+.clearComplete {
+  width: 140px;
+  font-size: 14px;
+  color: #777777;
+}
+.filters {
+  font-size: 14px;
+  color: #777777;
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+.filterButton {
+  background-color: white;
+  font-size: 14px;
+  color: #777777;
+  border: none;
+}
+.activeFilterButton {
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid rgb(175, 45, 45, 0.2);
+  background-color: white;
+  font-size: 14px;
+  color: #777777;
 }

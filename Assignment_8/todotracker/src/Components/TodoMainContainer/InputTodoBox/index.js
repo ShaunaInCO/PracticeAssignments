@@ -25,7 +25,10 @@ export default class InputTodoBox extends Component {
   };
   render() {
     return (
-      <>
+      <div className="inputField">
+        <div className="imageContainer">
+          <img src="/assets/dropDown.png" className="arrow" />
+        </div>
         <input
           type="text"
           onChange={this.handleChange}
@@ -34,7 +37,7 @@ export default class InputTodoBox extends Component {
           value={this.state.value}
           className="inputBox"
         />
-      </>
+      </div>
     );
   }
 }

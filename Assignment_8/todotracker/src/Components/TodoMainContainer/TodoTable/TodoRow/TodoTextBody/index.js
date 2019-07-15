@@ -58,9 +58,13 @@ export default class TodoTextBody extends Component {
             />
           )}
         </div>
-        <div onClick={this.handleClick}>
-          <img src="/assets/closeImage.png" className="closeTodo" />
-        </div>
+        {!this.state.editable ? (
+          <div onClick={this.handleClick} className="closeImage">
+            <img src="/assets/closeImage.png" className="closeTodo" />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }

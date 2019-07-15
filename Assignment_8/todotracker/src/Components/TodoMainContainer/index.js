@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import InputTodoBox from "./InputTodoBox";
 import TodoTable from "./TodoTable";
+import "./style.css";
 export default class TodoMainContainer extends Component {
   constructor(props) {
     super(props);
@@ -59,18 +60,22 @@ export default class TodoMainContainer extends Component {
   };
   render() {
     return (
-      <div>
-        <InputTodoBox
-          handlerFromInputTodo={this.handleTodoText}
-          value={this.state.value}
-        />
-        <TodoTable
-          todoList={this.state.todoList}
-          handleTodoCompleteStatus={this.handleStatus}
-          handleRemoveTodo={this.removeTodo}
-          handlerToEditTodo={this.editTodo}
-          handleClearCompletedTodos={this.clearCompletedTodos}
-        />
+      <div className="mainContainer">
+        <div className="heading">todos</div>
+
+        <div className="mainContent">
+          <InputTodoBox
+            handlerFromInputTodo={this.handleTodoText}
+            value={this.state.value}
+          />
+          <TodoTable
+            todoList={this.state.todoList}
+            handleTodoCompleteStatus={this.handleStatus}
+            handleRemoveTodo={this.removeTodo}
+            handlerToEditTodo={this.editTodo}
+            handleClearCompletedTodos={this.clearCompletedTodos}
+          />
+        </div>
       </div>
     );
   }

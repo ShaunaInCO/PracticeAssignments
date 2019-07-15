@@ -69,6 +69,7 @@ export default class TodoTable extends Component {
                 : false
             }
             handleFilterTable={this.changeFilter}
+            filter={this.state.filter}
           />
         ) : (
           ""

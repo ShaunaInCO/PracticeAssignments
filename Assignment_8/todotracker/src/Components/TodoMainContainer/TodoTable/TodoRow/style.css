@@ -1,8 +1,10 @@
 .todoRow {
-  margin-left: 5px;
-  width: 700px;
-  height: 60px;
-  font-size: 30px;
+  width: 783px;
+  height: 80px;
   border: solid 1px;
+  border-top: 0;
+  border-color: rgb(71, 69, 69, 0.5);
   display: flex;
+  background: white;
+  box-shadow: 10px 10px 10px 10px rgba(218, 218, 218, 0.5);
 }
